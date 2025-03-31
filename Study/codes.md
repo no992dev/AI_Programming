@@ -1,7 +1,10 @@
-## 목차
+## 주요 항목
 * [머신러닝 라이브러리 임포트](#머신러닝-라이브러리-임포트)
-* [Logistic Regression](#Logistic-Regression)
-* [One-Hot Encoding된 데이터 분리](#One-Hot-Encoding된-데이터-분리)
+* [데이터 로드](#로컬-데이터-로드)
+* [전처리](#결측치-확인)
+* [Train Test 분리](#Train-Data와-Test-Data-분리)
+* [머신러닝 모델 4종](#Decision-Tree)
+* [수동 정확도 비교](#수동으로-예측값과-정답-비교)
 * [One-Hot Encoding](#One-Hot-Encoding)
 <br><br>
 ## 머신러닝 라이브러리 임포트
@@ -63,13 +66,13 @@ encoder = LabelEncoder()
 df['Sex'] = encoder.fit_transform(df['Sex'])
 print(df.head())
 ```
-## Label Encoding된 데이터 train과 test로 분리
+## Train Data와 Test Data 분리
 ```
 X = df.drop(columns=['Survived'])
 y = df['Survived']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
-## train 데이터와 test 데이터 스케일링(StandardScaler)
+## Train 데이터와 Test 데이터 스케일링(StandardScaler)
 ```
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
@@ -178,10 +181,10 @@ print(comparison)
 ```
 X = X.values
 Y = pd.get_dummies(y).values
-X[:5]
-Y[:5]
+X[:5] # X.head()와 유사
+Y[:5] # Y.head()와 유사
 ```
-## One-Hot Encoding된 데이터 분리
+## One-Hot Encoding된 데이터 Train Data와 Test Data로 분리
 ```
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 ```

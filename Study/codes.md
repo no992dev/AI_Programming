@@ -79,6 +79,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 ## Decision Tree
+[맨 위로](#주요-항목)  
 scaled data를 사용하려면 X_train과 X_test 대신 X_train_scaled와 X_test_scaled를 사용하면 됨
 ```
 # DT 모델 학습

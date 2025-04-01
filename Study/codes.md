@@ -10,6 +10,7 @@
 ## 머신러닝 라이브러리 임포트
 ```
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier

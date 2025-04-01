@@ -69,7 +69,7 @@ print(df.head())
 ## Train Data와 Test Data 분리
 ```
 target = 'target'
-X = df.drop(columns=[target])
+X = df.drop(columns=[target], axis = 1)
 y = df[target]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```

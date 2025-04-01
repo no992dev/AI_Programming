@@ -10,7 +10,7 @@
 ## 머신러닝 라이브러리 임포트
 ```
 import pandas as pd
-from sklearn.model_selection import train_test_split, cross_val_score, confusion_matrix
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -68,8 +68,9 @@ print(df.head())
 ```
 ## Train Data와 Test Data 분리
 ```
-X = df.drop(columns=['Survived'])
-y = df['Survived']
+target = 'target'
+X = df.drop(columns=[target])
+y = df[target]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 ## Train 데이터와 Test 데이터 스케일링(StandardScaler)
@@ -179,6 +180,7 @@ comparison["Result"] = comparison["Actual"] == comparison["Predicted"]
 print(comparison)
 ```
 ## One-Hot Encoding
+get_dummies 함수가 One-Hot Encoding, values는 Numpy로 변환
 ```
 X = X.values
 Y = pd.get_dummies(y).values
